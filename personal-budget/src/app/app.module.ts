@@ -1,8 +1,11 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
+
 import { MenuComponent } from './menu/menu.component';
 import { HeroComponent } from './hero/hero.component';
 import { FooterComponent } from './footer/footer.component';
@@ -11,6 +14,12 @@ import { ArticleComponent } from './article/article.component';
 import { AboutComponent } from './about/about.component';
 import { LoginComponent } from './login/login.component';
 import { P404Component } from './p404/p404.component';
+import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
+import { ContactComponent } from './contact/contact.component';
+import { ChartComponent } from './chart/chart.component';
+
+
+import { DataService } from './services/data.service';
 
 @NgModule({
   declarations: [
@@ -22,18 +31,17 @@ import { P404Component } from './p404/p404.component';
     ArticleComponent,
     AboutComponent,
     LoginComponent,
-    P404Component
+    P404Component,
+    BreadcrumbsComponent,
+    ContactComponent,
+    ChartComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule
   ],
-  schemas: [
-    CUSTOM_ELEMENTS_SCHEMA,
-    NO_ERRORS_SCHEMA
-  ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
